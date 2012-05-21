@@ -9,6 +9,8 @@ APP_VERSION := \
 
 FIREFOX_PATH = $(shell which firefox)
 
+URL = "http://mozilla.org"
+
 XPI_FILE := $(APP_NAME)-$(APP_VERSION).xpi
 
 $(XPI_FILE): $(SOURCES)
@@ -20,5 +22,4 @@ clean:
 	rm $(XPI_FILE)
 
 run: $(XPI_FILE)
-#	mozmill --addons=$< -b $(FIREFOX_PATH)  --app-arg="http://demos.dojotoolkit.org/demos/themePreviewer/demo.html"
-	mozmill --addons=$< -b $(FIREFOX_PATH)  --app-arg="/home/eitan/tmp/t.html"
+	mozmill --addons=$< -b $(FIREFOX_PATH)  --app-arg=$(URL)
