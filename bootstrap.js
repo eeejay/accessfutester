@@ -8,8 +8,8 @@ function startup(data, reason) {
   dump('startup!\n');
 
   let prefs = Cc['@mozilla.org/preferences-service;1']
-    .getService(Ci.nsIPrefService).getBranch('accessibility.');
-  prefs.setIntPref('accessfu', 1);
+    .getService(Ci.nsIPrefService).getBranch('accessibility.accessfu.');
+  prefs.setIntPref('activate', 1);
 
   let wm = Cc['@mozilla.org/appshell/window-mediator;1']
     .getService(Ci.nsIWindowMediator);
@@ -44,8 +44,8 @@ function startup(data, reason) {
 
 function shutdown(data, reason) {
   let prefs = Cc['@mozilla.org/preferences-service;1']
-    .getService(Ci.nsIPrefService).getBranch('accessibility.');
-  prefs.setIntPref('accessfu', 0);
+    .getService(Ci.nsIPrefService).getBranch('accessibility.accessfu.');
+  prefs.setIntPref('activate', 0);
 }
 
 function install(aData, aReason) { }
