@@ -58,7 +58,7 @@ function loadIntoWindow(win) {
 
   try {
     Cu.import('resource://gre/modules/accessibility/AccessFu.jsm');
-    Cu.import('resource://gre/modules/accessibility/Presenters.jsm');
+    Cu.import('resource://gre/modules/accessibility/Presentation.jsm');
 
     AccessFu.attach(win);
     AccessFu.addPresenter(new DummyAndroidPresenter());
